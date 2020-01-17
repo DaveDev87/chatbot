@@ -8,24 +8,26 @@ import { Container } from '@material-ui/core';
 
 function App() {
   const [text, setText] = useState();
-  const [actualtext, setActual] = useState();
+  const [actualtext, setActual] = useState("");
   const [arr, setArr] = useState();
+
+  const hola = "";
 
 
   function enter(event){
     if(event.key === "Enter"){
       setActual(text);
-      event.target.value=""
 
       const texto=actualtext.split(" ");
-      console.log(texto)
+      setArr(texto)
+    
 
+      event.target.value="";
 
     } else {
 
     }
   }
-  console.log(actualtext)
 
   return (
     <div className="App" >
@@ -43,6 +45,7 @@ function App() {
                 id="outlined-multiline-static"
                 multiline
                 rows="4"
+                value={arr}
                 fullWidth
                 variant="outlined"
                 InputProps={{
